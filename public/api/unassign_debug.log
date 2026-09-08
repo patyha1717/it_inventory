@@ -1,0 +1,224 @@
+
+== POST (2026-05-27 16:17:16) ==
+Array
+(
+    [assign_id] => 6
+    [remarks] => Unassigned from UI
+)
+
+== DB RESULT ==
+Array
+(
+    [id] => 6
+    [item_id] => 6
+    [user_id] => 5
+    [assigned_by] => 1
+    [assigned_on] => 2026-05-27 16:11:23
+    [unassigned_on] => 
+    [remarks] => 
+    [state] => West Bengal
+    [city] => Howrah
+    [uid] => 5
+    [name] => Prince Uddalak Dutta
+    [email] => pdutta@arukustech.com
+    [iid] => 6
+    [item_details] => Laptop
+    [asset_code] => ARKLAP0005
+    [serial_no] => PF3ZP7GP
+)
+
+== AUDIT INSERTED ==
+Laptop (ARKLAP0005) unassigned from Prince Uddalak Dutta
+MAIL ERROR: Invalid address:  (From): 
+
+== POST (2026-05-27 16:21:25) ==
+Array
+(
+    [assign_id] => 7
+    [remarks] => Unassigned from UI
+)
+
+== DB RESULT ==
+Array
+(
+    [id] => 7
+    [item_id] => 6
+    [user_id] => 5
+    [assigned_by] => 1
+    [assigned_on] => 2026-05-27 16:17:42
+    [unassigned_on] => 
+    [remarks] => 
+    [state] => West Bengal
+    [city] => Howrah
+    [uid] => 5
+    [name] => Prince Uddalak Dutta
+    [email] => pdutta@arukustech.com
+    [iid] => 6
+    [item_details] => Laptop
+    [asset_code] => ARKLAP0005
+    [serial_no] => PF3ZP7GP
+)
+
+== AUDIT INSERTED ==
+Laptop (ARKLAP0005) unassigned from Prince Uddalak Dutta
+MAIL ERROR: Invalid address:  (From): 
+
+== POST (2026-05-27 16:27:19) ==
+Array
+(
+    [assign_id] => 8
+    [remarks] => Unassigned from UI
+)
+
+== DB RESULT ==
+Array
+(
+    [id] => 8
+    [item_id] => 6
+    [user_id] => 5
+    [assigned_by] => 1
+    [assigned_on] => 2026-05-27 16:22:14
+    [unassigned_on] => 
+    [remarks] => 
+    [state] => West Bengal
+    [city] => Howrah
+    [uid] => 5
+    [name] => Prince Uddalak Dutta
+    [email] => pdutta@arukustech.com
+    [iid] => 6
+    [item_details] => Laptop
+    [asset_code] => ARKLAP0005
+    [serial_no] => PF3ZP7GP
+)
+
+== AUDIT INSERTED ==
+Laptop (ARKLAP0005) unassigned from Prince Uddalak Dutta
+MAIL ERROR: Invalid address:  (From): 
+
+== POST (2026-05-27 16:33:58) ==
+Array
+(
+    [assign_id] => 9
+    [remarks] => Unassigned from UI
+)
+
+== DB RESULT ==
+Array
+(
+    [id] => 9
+    [item_id] => 6
+    [user_id] => 4
+    [assigned_by] => 1
+    [assigned_on] => 2026-05-27 16:27:31
+    [unassigned_on] => 
+    [remarks] => 
+    [state] => West Bengal
+    [city] => Howrah
+    [uid] => 4
+    [name] => Jalaluddin Faruque
+    [email] => jfaruque@arukustech.in
+    [iid] => 6
+    [item_details] => Laptop
+    [asset_code] => ARKLAP0005
+    [serial_no] => PF3ZP7GP
+)
+
+== AUDIT INSERTED ==
+Laptop (ARKLAP0005) unassigned from Jalaluddin Faruque
+MAIL ERROR: Invalid address:  (From): 
+
+== POST (2026-07-31 19:13:01) ==
+Array
+(
+    [assign_id] => 5
+    [remarks] => Unassigned from UI
+)
+
+== DB RESULT ==
+Array
+(
+    [id] => 5
+    [item_id] => 5
+    [user_id] => 4
+    [assigned_by] => 3
+    [assigned_on] => 2026-05-26 16:24:50
+    [unassigned_on] => 
+    [remarks] => 
+    [state] => West Bengal
+    [city] => Kolkata
+    [uid] => 4
+    [name] => Jalaluddin Faruque
+    [email] => jfaruque@arukustech.in
+    [iid] => 5
+    [item_details] => Monitor 22"
+    [asset_code] => ARKMNR0001
+    [serial_no] => CN-078JPV-FCC00-93Q-DDNL-A01
+)
+
+== AUDIT INSERTED ==
+Monitor 22" (ARKMNR0001) unassigned from Jalaluddin Faruque
+MAIL ERROR: Invalid address:  (From): 
+
+== POST (2026-07-31 19:13:08) ==
+Array
+(
+    [assign_id] => 4
+    [remarks] => Unassigned from UI
+)
+
+== DB RESULT ==
+Array
+(
+    [id] => 4
+    [item_id] => 4
+    [user_id] => 4
+    [assigned_by] => 3
+    [assigned_on] => 2026-05-26 16:23:27
+    [unassigned_on] => 
+    [remarks] => 
+    [state] => West Bengal
+    [city] => Kolkata
+    [uid] => 4
+    [name] => Jalaluddin Faruque
+    [email] => jfaruque@arukustech.in
+    [iid] => 4
+    [item_details] => Mouse
+    [asset_code] => ARKKM0003
+    [serial_no] => 0TWJ2R-L0300-88S-ODEF
+)
+
+== AUDIT INSERTED ==
+Mouse (ARKKM0003) unassigned from Jalaluddin Faruque
+MAIL ERROR: Invalid address:  (From): 
+
+== POST (2026-07-31 19:13:12) ==
+Array
+(
+    [assign_id] => 3
+    [remarks] => Unassigned from UI
+)
+
+== DB RESULT ==
+Array
+(
+    [id] => 3
+    [item_id] => 3
+    [user_id] => 4
+    [assigned_by] => 3
+    [assigned_on] => 2026-05-26 16:21:13
+    [unassigned_on] => 
+    [remarks] => 
+    [state] => West Bengal
+    [city] => Kolkata
+    [uid] => 4
+    [name] => Jalaluddin Faruque
+    [email] => jfaruque@arukustech.in
+    [iid] => 3
+    [item_details] => HP Laptop
+    [asset_code] => ARKLAP0003
+    [serial_no] => 5CD0478DH3
+)
+
+== AUDIT INSERTED ==
+HP Laptop (ARKLAP0003) unassigned from Jalaluddin Faruque
+MAIL ERROR: Invalid address:  (From): 

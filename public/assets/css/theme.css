@@ -1,0 +1,25 @@
+/* THEME.CSS — COLORS */
+
+.bg-primary {
+    background-color: #2563eb !important;
+}
+
+.bg-success {
+    background-color: #16a34a !important;
+}
+
+.bg-danger {
+    background-color: #dc2626 !important;
+}
+
+.bg-warning {
+    background-color: #f59e0b !important;
+}
+
+.sidebar {
+    background: #111827 !important;
+}
+
+.navbar.topnav-menu {
+    background: #1f2937 !important;
+}

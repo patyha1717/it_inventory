@@ -1,0 +1,270 @@
+/* === theme.css (light mode override) ===
+   Load order: after AdminLTE CSS
+   Goal: replace base colors, fonts, and component accents
+*/
+
+/* 1) Optional: import your template font (adjust URL if needed) */
+/* Example Google Font: Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+/* 2) Core variables � replace these with your template palette */
+:root{
+  --bm-font: 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, Arial, "Helvetica Neue", "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", sans-serif;
+  --bm-primary: #2a7cc7;    /* ? replace with your template primary */
+  --bm-primary-600: #1e65a6;
+  --bm-accent: #00b894;     /* accent / success */
+  --bm-danger: #e74c3c;
+  --bm-warning: #f1c40f;
+  --bm-dark: #1f2937;
+  --bm-text: #111827;
+  --bm-muted: #6b7280;
+  --bm-bg: #f6f8fb;         /* page background */
+  --bm-card: #ffffff;       /* card background */
+  --bm-border: #e5e7eb;     /* borders */
+  --bm-radius: 12px;        /* global rounding */
+}
+
+/* 3) Global */
+html, body {
+  background: var(--bm-bg);
+  color: var(--bm-text);
+  font-family: var(--bm-font);
+  font-size: 14.5px;
+}
+
+/* 4) Navbar */
+.navbar-white {
+  background: #fff !important;
+  border-bottom: 1px solid var(--bm-border);
+}
+.navbar .nav-link { color: var(--bm-dark) !important; }
+.navbar .nav-link:hover { color: var(--bm-primary) !important; }
+
+/* 5) Sidebar */
+.main-sidebar { background: #0f172a; } /* deep navy */
+.brand-link { background: #0b1224; color: #e5e7eb !important; }
+.sidebar .nav-link {
+  border-radius: 8px;
+  color: #cbd5e1;
+}
+.sidebar .nav-link.active,
+.sidebar .nav-link:hover {
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+}
+
+/* 6) Cards */
+.card {
+  border: 1px solid var(--bm-border);
+  border-radius: var(--bm-radius);
+  box-shadow: 0 6px 18px rgba(17, 24, 39, 0.05);
+}
+.card-header {
+  background: var(--bm-card);
+  border-bottom: 1px solid var(--bm-border);
+}
+.card-title { font-weight: 600; }
+
+/* 7) Buttons */
+.btn-primary {
+  background: var(--bm-primary) !important;
+  border-color: var(--bm-primary) !important;
+  border-radius: 10px;
+}
+.btn-primary:hover {
+  background: var(--bm-primary-600) !important;
+  border-color: var(--bm-primary-600) !important;
+}
+.btn-success { background: var(--bm-accent) !important; border-color: var(--bm-accent) !important; }
+.btn-danger  { background: var(--bm-danger) !important; border-color: var(--bm-danger) !important; }
+.btn-warning { background: var(--bm-warning) !important; border-color: var(--bm-warning) !important; color:#111 !important; }
+
+/* 8) Forms */
+.form-control {
+  border-radius: 10px;
+  border-color: var(--bm-border);
+  box-shadow: none !important;
+}
+.form-control:focus {
+  border-color: var(--bm-primary);
+  box-shadow: 0 0 0 3px rgba(42,124,199,0.1) !important;
+}
+
+/* 9) Tables */
+.table { background: var(--bm-card); }
+.table thead th {
+  background: #f3f4f6;
+  border-bottom: 1px solid var(--bm-border) !important;
+  font-weight: 600;
+}
+.table td, .table th { border-top: 1px solid var(--bm-border); }
+
+/* 10) Badges */
+.badge-info { background: var(--bm-primary) !important; }
+.badge-success { background: var(--bm-accent) !important; }
+.badge-danger { background: var(--bm-danger) !important; }
+
+/* 11) Small boxes (dashboard tiles) */
+.small-box { border-radius: 14px; }
+.small-box .inner h3 { font-weight: 700; }
+.small-box .icon { opacity: 0.25; }
+
+/* 12) Progress bars */
+.progress { background: #e5e7eb; border-radius: 999px; overflow: hidden; }
+.progress-bar { background: var(--bm-primary) !important; }
+
+/* 13) Summernote editor */
+.note-editor.note-frame { border-radius: var(--bm-radius); border-color: var(--bm-border); }
+.note-editor .note-toolbar { background: #f9fafb; border-bottom: 1px solid var(--bm-border); }
+.note-editor .note-editing-area { background: #fff; }
+
+/* 14) Cards with outlines */
+.card-outline.card-primary > .card-header {
+  border-top: 3px solid var(--bm-primary);
+}
+.card-outline.card-secondary > .card-header {
+  border-top: 3px solid #94a3b8;
+}
+
+/* 15) Links */
+a { color: var(--bm-primary); }
+a:hover { color: var(--bm-primary-600); }
+
+/* 16) Charts */
+#sentChart { background: #fff; border: 1px solid var(--bm-border); border-radius: var(--bm-radius); padding: 10px; }
+
+/* === Paste your template-specific tokens below ===
+   If your template CSS defines variables, copy them here and adjust the values above to match.
+   You can also paste utility classes (buttons, color helpers) � they will just work over AdminLTE.
+*/
+
+
+/* === SIDEBAR HEIGHT / LAYOUT FIXES ===
+   These rules aim to keep the left sidebar full-height and consistent across pages and screen sizes,
+   while avoiding conflicts with AdminLTE defaults. They are conservative (minimal overrides)
+   and include mobile-friendly adjustments.
+*/
+
+/* Ensure the main sidebar occupies full viewport height and enables internal scrolling */
+.main-sidebar {
+  min-height: 100vh;            /* full viewport height */
+  display: flex;
+  flex-direction: column;
+  position: sticky;             /* keeps sidebar visible when scrolling content */
+  top: 0;
+  height: 100vh;
+  z-index: 1040;                /* above content but below modals */
+}
+
+/* Keep brand and sidebar separated and allow nav to scroll if long */
+.brand-link {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1rem;
+}
+
+/* Sidebar container should grow and allow vertical scrolling */
+.sidebar {
+  flex: 1 1 auto;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 1rem;
+}
+
+/* Make nav column fill available height (helps with active link alignment) */
+.nav-sidebar {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100% - 16px);
+}
+
+/* Keep the content-wrapper full height so background panels align */
+.content-wrapper {
+  min-height: 100vh; /* ensures content area min-height matches viewport */
+  display: block;
+}
+
+/* If you use a fixed-top navbar, add top padding to content so it doesn't overlap */
+.main-header {
+  z-index: 1050;
+}
+
+.main-header.navbar-white {
+  background: #ffffff;
+  border-bottom: 1px solid #ddd;
+}
+
+.main-header .nav-link, 
+.main-header .navbar-nav .nav-item > a {
+  font-weight: 500;
+  color: #333 !important;
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+  color: #007bff !important;
+}
+
+
+/* When the sidebar is collapsed (desktop toggle), AdminLTE adds .sidebar-collapse on body.
+   Ensure layout still behaves correctly.
+*/
+body.sidebar-collapse .main-sidebar {
+  left: -250px; /* keep AdminLTE default behavior (adjust only if you changed sidebar width) */
+}
+
+/* Mobile adjustments: on small screens we want the sidebar to behave as overlay (AdminLTE default),
+   so revert the sticky/fixed behavior to avoid interfering with the top navbar and improve UX.
+*/
+@media (max-width: 767.98px) {
+  .main-sidebar {
+    position: relative;
+    height: auto;
+    min-height: auto;
+  }
+  .sidebar {
+    max-height: none;
+    overflow: visible;
+  }
+  .content-wrapper {
+    min-height: auto;
+  }
+}
+
+/* If you use a tall footer, ensure it doesn't push sidebar shorter than viewport */
+.main-footer {
+  z-index: 1030;
+}
+
+/* Optional: make scrollbar look subtle (non-critical) */
+.sidebar::-webkit-scrollbar { width: 8px; }
+.sidebar::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.06);
+  border-radius: 6px;
+}
+
+/* === UTILITY HELPERS (non-breaking, safe to keep) === */
+
+/* Keep sidebar links consistent padding / visual weight */
+.sidebar .nav-link {
+  padding: .55rem .9rem;
+  font-size: 0.95rem;
+}
+
+/* Active / hover state accent (already set above, reinforce contrast) */
+.sidebar .nav-link.active {
+  background: linear-gradient(90deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+  color: #fff !important;
+}
+
+/* Tweak for AdminLTE content padding so content and sidebar heights look balanced */
+.content {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+/* If you are using .control-sidebar, ensure it doesn't affect layout heights */
+.control-sidebar {
+  z-index: 1060;
+}
+

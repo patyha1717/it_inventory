@@ -1,0 +1,35 @@
+<?php
+
+function envv($k, $def = '') {
+    static $env = null;
+    if ($env === null) {
+        $env = @parse_ini_file(__DIR__ . '/../.env', false, INI_SCANNER_RAW) ?: [];
+    }
+    return $env[$k] ?? $def;
+}
+
+function db() {
+    static $pdo = null;
+    if ($pdo) return $pdo;
+
+    $dsn = 'mysql:host=' . envv('DB_HOST') .
+           ';dbname=' . envv('DB_NAME') .
+           ';charset=' . envv('DB_CHARSET', 'utf8mb4');
+
+    try {
+        $pdo = new PDO(
+            $dsn,
+            envv('DB_USER'),
+            envv('DB_PASS'),
+            [
+                PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+                PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
+            ]
+        );
+    } catch (PDOException $e) {
+        die("DB Connection Failed: " . $e->getMessage());
+    }
+
+    return $pdo;
+}
+

@@ -1,0 +1,129 @@
+/* Bulk Mailer — Login styles */
+:root{
+  --bg:#0f1724;
+  --card:#0b1220;
+  --accent:#0066ff;
+  --muted: #9aa4b2;
+  --glass: rgba(255,255,255,0.03);
+  --radius: 12px;
+  --maxw: 420px;
+  font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+html,body{height:100%;}
+body{margin:0; background:linear-gradient(180deg,#071029 0%, #0b1530 60%); color:#e6eef8; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;}
+
+/* Container splits into hero + card */
+.bm-container{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:40px;
+  padding:40px;
+  box-sizing:border-box;
+}
+
+/* Left hero */
+.bm-hero{
+  flex:1;
+  min-width:260px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.bm-hero-inner{
+  max-width:420px;
+  text-align:left;
+}
+.bm-mail-icon{
+  width:72px; height:72px;
+  color:var(--accent);
+  margin-bottom:14px;
+  filter:drop-shadow(0 6px 18px rgba(0,102,255,0.12));
+}
+.bm-hero h1{
+  font-size:34px;
+  margin:0 0 8px;
+  font-weight:800;
+  color: #fff;
+}
+.bm-hero p{
+  margin:0;
+  color:var(--muted);
+  font-size:15px;
+}
+
+/* Card */
+.bm-card-wrap{ width:100%; max-width:var(--maxw); }
+.bm-card{
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-radius: var(--radius);
+  padding:24px;
+  box-shadow: 0 10px 30px rgba(2,6,23,0.6);
+  border:1px solid rgba(255,255,255,0.03);
+}
+.bm-card-header h2{
+  margin:0; font-size:22px; font-weight:700; color:#fff;
+}
+.bm-card-header .bm-small{ margin:6px 0 16px; color:var(--muted); font-size:13px; }
+
+/* Alert */
+.bm-alert{
+  background: rgba(255,80,80,0.12);
+  color:#ffb4b4;
+  padding:10px 12px;
+  border-radius:8px;
+  margin-bottom:12px;
+  border:1px solid rgba(255,80,80,0.12);
+  font-size:14px;
+}
+
+/* Form */
+.bm-form{ display:flex; flex-direction:column; gap:10px; }
+.bm-label{ font-size:13px; color:var(--muted); margin-bottom:4px; }
+.bm-input{
+  padding:12px 14px;
+  border-radius:10px;
+  border:1px solid rgba(255,255,255,0.04);
+  background:var(--glass);
+  color:#eaf2ff;
+  outline:none;
+  font-size:15px;
+}
+.bm-input:focus{
+  box-shadow: 0 6px 18px rgba(0,102,255,0.12);
+  border-color:var(--accent);
+}
+
+/* Row */
+.bm-row{ display:flex; align-items:center; justify-content:space-between; margin-top:6px; }
+.bm-checkbox{ font-size:13px; color:var(--muted); display:flex; align-items:center; gap:8px; }
+.bm-link{ color:var(--accent); text-decoration:none; font-size:13px; }
+
+/* Button */
+.bm-button{
+  margin-top:8px;
+  padding:12px 14px;
+  border-radius:10px;
+  font-weight:700;
+  border:0;
+  cursor:pointer;
+  background: linear-gradient(90deg,var(--accent), #4aa3ff);
+  color:#fff;
+  font-size:15px;
+  transition:transform .12s ease, box-shadow .12s ease;
+  box-shadow: 0 8px 20px rgba(6,95,212,0.18);
+}
+.bm-button:active{ transform:translateY(1px); }
+.bm-button:hover{ box-shadow: 0 12px 30px rgba(6,95,212,0.22); }
+
+/* Footer note */
+.bm-footer-note{ margin-top:12px; text-align:center; color:var(--muted); font-size:13px; }
+
+/* Responsive: stack on small screens */
+@media (max-width:880px){
+  .bm-container{ flex-direction:column; padding:20px; gap:20px; }
+  .bm-hero{ order:2; text-align:center; }
+  .bm-hero-inner{ max-width:380px; margin:0 auto; }
+}

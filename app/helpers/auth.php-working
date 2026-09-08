@@ -1,0 +1,22 @@
+<?php
+if (session_status() !== PHP_SESSION_ACTIVE) { @session_start(); }
+
+function check_login() {
+    if (empty($_SESSION['user_id'])) {
+       header("Location: /itms.arukustech.com/public/login.php");
+        exit;
+    }
+}
+
+function is_superadmin() {
+    return ($_SESSION['role'] ?? '') === 'superadmin';
+}
+
+function is_admin() {
+    $role = $_SESSION['role'] ?? '';
+    return ($role === 'admin' || $role === 'superadmin');
+}
+
+function is_user() {
+    return ($_SESSION['role'] ?? '') === 'user';
+}

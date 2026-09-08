@@ -1,0 +1,15 @@
+/* CUSTOM.CSS — BRANDING + FIXES */
+
+.sidebar-link.active {
+    background: #1f2937;
+    color: #fff;
+}
+
+.sidebar-sublink.active {
+    background: #1f2937;
+    color: #fff;
+}
+
+.content h3 {
+    font-weight: 700;
+}

@@ -1,0 +1,4 @@
+"category,item_details,brand,model,serial_no,purchase_date,invoice_no,warranty_date,cost"
+"Laptop,HP Elitebook,HP,830 G5,AB12345,2023-01-05,INV556,2026-01-05,65000"
+"Desktop,Dell Optiplex,Dell,3080,XY98765,2022-06-11,INV223,2025-06-11,42000"
+"Printer,Canon LaserJet,Canon,LBP2900A,PR5566,2021-03-22,INV998,2024-03-22,18000"

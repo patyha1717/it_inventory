@@ -1,0 +1,41 @@
+RewriteEngine On
+RewriteBase /
+
+# ----------------------
+#  FORCE HTTPS
+# ----------------------
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# ----------------------
+#  CLEAN URL ROUTING
+# ----------------------
+# /inventory/add ? /inventory_add.php
+RewriteRule ^inventory/add$ inventory_add.php [L]
+
+# /inventory/list ? /inventory_list.php
+RewriteRule ^inventory/list$ inventory_list.php [L]
+
+# /categories ? /categories.php
+RewriteRule ^categories$ categories.php [L]
+
+# ----------------------
+#  API CLEAN ROUTES
+# ----------------------
+# /api/inventory/list ? api/inventory_list.php
+RewriteRule ^api/inventory/list$ api/inventory_list.php [L]
+
+RewriteRule ^api/inventory/add$ api/inventory_add.php [L]
+
+RewriteRule ^api/inventory/delete$ api/inventory_delete.php [L]
+
+RewriteRule ^api/categories/list$ api/categories_list.php [L]
+
+RewriteRule ^api/categories/add$ api/categories_add.php [L]
+
+RewriteRule ^api/categories/delete$ api/categories_delete.php [L]
+
+# ----------------------
+# Prevent directory listing
+# ----------------------
+Options -Indexes

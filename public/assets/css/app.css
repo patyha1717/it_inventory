@@ -1,0 +1,74 @@
+/* APP.CSS — MAIN LAYOUT */
+
+body {
+    background: #f4f6f9;
+    font-family: "Inter", sans-serif;
+}
+
+/* TOP NAV */
+.navbar.topnav-menu {
+    height: 60px;
+    background: #1f2937 !important;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+.navbar.topnav-menu .navbar-brand {
+    font-size: 20px;
+    letter-spacing: .5px;
+}
+
+/* SIDEBAR */
+.sidebar {
+    background: #111827;
+    padding: 0;
+    min-height: 100vh;
+}
+
+.sidebar h4 {
+    font-size: 18px;
+    border-bottom: 1px solid #374151;
+}
+
+/* Sidebar Links */
+.sidebar-link {
+    display: block;
+    padding: 12px 20px;
+    color: #d1d5db;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.sidebar-link:hover {
+    background: #1f2937;
+    color: #fff;
+}
+
+.sidebar-sublink {
+    padding: 10px 35px;
+    color: #9ca3af;
+    text-decoration: none;
+    font-size: 14px;
+    display: block;
+}
+
+.sidebar-sublink:hover {
+    background: #1f2937;
+    color: #fff;
+}
+
+.content {
+    padding: 25px;
+}
+
+/* CARDS */
+.card {
+    border-radius: 10px;
+    border: none;
+}
+
+.card-header {
+    background: #fff;
+    font-weight: bold;
+    border-bottom: 1px solid #e5e7eb;
+}
+

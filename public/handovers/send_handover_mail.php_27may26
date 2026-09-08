@@ -1,0 +1,65 @@
+<?php
+require_once __DIR__ . '/../../vendor/autoload.php';
+require_once __DIR__ . '/../../config/env_loader.php';
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+function sendHandoverMail($toEmail, $pdf, $doc)
+{
+    $mail = new PHPMailer(true);
+
+    try {
+        // SMTP Config
+        $mail->isSMTP();
+        $mail->Host = env('SMTP_HOST');
+        $mail->SMTPAuth = true;
+        $mail->Username = env('SMTP_USERNAME');
+        $mail->Password = env('SMTP_PASSWORD');
+        $mail->Port = env('SMTP_PORT');
+        $mail->SMTPSecure = env('SMTP_SECURE');
+
+        // Email Metadata
+        $mail->setFrom(env('MAIL_FROM'), env('COMPANY_NAME'));
+        $mail->addAddress($toEmail);
+
+        // CC emails
+        $ccList = explode(",", env('MAIL_CC'));
+        foreach ($ccList as $cc) {
+            $mail->addCC(trim($cc));
+        }
+
+        //$mail->Subject = "Your Asset Handover Document";
+        //$mail->Body = "Dear Employee,\n\nAttached are your Asset Handover documents.\n\nRegards,\nCompany IT Solutions";
+
+        // Embed Logo for the Signature
+        $logoPath = $_SERVER['DOCUMENT_ROOT'] . "/assets/logo/mail_logo.png";
+        if (file_exists($logoPath)) {
+            $mail->addEmbeddedImage($logoPath, 'company_logo');
+        }
+
+        // Content
+        $mail->isHTML(true);
+        $mail->Subject = "Asset Handover Document - Company IT Solutions";
+        $mail->Body    = "
+            <div style='font-family:Arial, sans-serif; color:#333;'>
+                <p>Dear <b>Employee</b>,</p>
+                <p>Please find the attached Asset Handover document for the equipment assigned to you today.</p>
+                <p>Kindly keep this for your records.</p>
+                <br>
+                <p>Regards,<br>
+                <b>Company IT Solutions Pvt. Ltd.</b><br>
+                <img src='cid:company_logo' style='width:150px; margin-top:10px;'></p>
+            </div>";
+
+        // Attach Files
+        $mail->addAttachment($pdf);
+       // $mail->addAttachment($doc);
+
+        $mail->send();
+        return true;
+
+    } catch (Exception $e) {
+        return false;
+    }
+}
